@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+ {% if get_flashed_messages() %}
+                <header>
+                    <div class="alert alert-info" role="alert">
+                        {{ get_flashed_messages() | join("") }}
+                    </div>
+                </header>
+            {% endif %}
+
+{% block main %}
+    <table class=table table-striped>
+    <thead>
+    <tr>
+        <th>Symbol</th><th>Name</th><th>Shares</th><th>Price</th><th>Total</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{symbol}}</td><td>{{name}}</td><td>{{shares}}</td><td>{{price}}</td><td>{{total}}</td>
+    </tr>
+    </tbody>
+    </table>
+    <p>cash balance is {{bcash}}</p>
+
+
+{% endblock %}

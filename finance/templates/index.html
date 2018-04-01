@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+
+{% block main %}
+    <table class=table table-striped>
+    <thead>
+    <tr>
+        <th>Symbol</th><th>Name</th><th>Shares</th><th>Price</th><th>Total</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for row in rows %}
+
+    <tr>
+        <td>{{row['symbol']}}</td><td>{{row['name']}}</td><td>{{row['shares']}}</td><td>{{row['price']}}</td><td>{{row['total']}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    <p style="font-size:40px;padding:20px;padding:20px;margin:10px auto;">Total amount is {{gross}}</p>
+    <p style="font-size:40px;padding:20px;padding:20px;margin:10px auto;">Total Cash left is {{cash}}</p>
+
+
+{% endblock %}
